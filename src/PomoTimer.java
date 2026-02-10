@@ -1,8 +1,7 @@
-import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class Timer implements ActionListener {
+public class PomoTimer implements ActionListener {
 
     JFrame frame = new JFrame();
     JButton startButton = new JButton("START");
@@ -26,9 +25,9 @@ public class Timer implements ActionListener {
     });
 
 
-    Timer(){
+    PomoTimer(){
 
-        timeLabel.setText("TEST");
+        timeLabel.setText("00.00.00");
         timeLabel.setBounds(100,100,300,100);
         timeLabel.setBorder(BorderFactory.createBevelBorder(1));
         timeLabel.setHorizontalAlignment(JTextField.CENTER);
@@ -71,10 +70,11 @@ public class Timer implements ActionListener {
     }
 
     void stop(){
-
+        timer.stop();
     }
 
     void reset(){
-
+        timer.stop();
+        timeLabel.setText("00.00.00");
     }
 }
